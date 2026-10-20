@@ -1,6 +1,6 @@
 # nl-password
 
-A quiet holding page for a password-protected store: optional product image, logo, a transit-style tag ("— • • • LINE 01 • • • —"), up to three short lines, and an email signup with a pulsing button. Staff reach the real store-password form through an invisible hotspot.
+A quiet holding page for a password-protected store: optional product image, logo, a transit-style tag ("— • • • LINE 01 • • • —"), up to three short lines plus a serif sub-line, and an email signup with a pulsing button. Staff reach the real store-password form through an invisible hotspot.
 
 | Mobile | Desktop | Phone, landscape |
 |---|---|---|
@@ -8,7 +8,7 @@ A quiet holding page for a password-protected store: optional product image, log
 
 ## What it does
 
-- **Everything is a setting.** That covers the image, logo, tag text and ornaments, three lines of copy, signup on/off, email placeholder, button label, pulse, success message, the customer tag added to signups, three page colours, and the staff-login copy.
+- **Everything is a setting.** That covers the image, logo, tag text and ornaments, three lines of copy, a serif sub-line, signup on/off, email placeholder, button label, pulse, success message, the customer tag added to signups, three page colours, and the staff-login copy.
 - **Signups become customers.** Shopify's customer form tags each one (default `holding-page`), so you can find them under **Customers** and email them at launch.
 - **Instant confirmation.** The success message shows on submit and survives Shopify's page reload, including after a captcha step.
 - **Staff access.** An invisible 56×56px hotspot in the top-left corner opens the store-password form and focuses it. A wrong password reopens the form with the error message.
@@ -41,7 +41,8 @@ templates/password.json      example template using this section
 | | Logo | (none: shows the store name) |
 | Tag | Tag text | `LINE 01` (empty hides the tag) |
 | | Show rules and dots around the tag | On |
-| Copy | Line 1 / 2 / 3 | Line 3: `Arriving soon.` |
+| Copy | Line 1 / 2 / 3 | Line 3: `First access, Nov 15.` |
+| | Sub-line | `The list receives the passcode two days before the public. 50 units. No restock.` (serif, muted, wraps) |
 | Signup | Show email signup | On |
 | | Email placeholder | `Email address` |
 | | Button label | `Request access` |
@@ -53,7 +54,7 @@ templates/password.json      example template using this section
 
 ## Design tokens used
 
-`--nl-color-bg`, `--nl-color-text`, `--nl-color-error`, `--nl-font-sans`, plus the section's own `--nl-password-text`, `--nl-password-line` and `--nl-password-highlight`.
+`--nl-color-bg`, `--nl-color-text`, `--nl-color-text-secondary`, `--nl-color-error`, `--nl-font-sans`, `--nl-font-serif`, plus the section's own `--nl-password-text`, `--nl-password-line` and `--nl-password-highlight`.
 
 ## Notes
 
