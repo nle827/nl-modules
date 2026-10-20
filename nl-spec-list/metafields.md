@@ -1,8 +1,8 @@
 # nl-spec-list: metaobject and metafield definitions
 
-The block reads one product metafield, `nl.specs`, which is a list of `nl_spec` metaobject entries. Create the metaobject definition first, then the metafield that points at it.
+The block reads one product metafield, `nl_modules.specs`, which is a list of `nl_spec` metaobject entries. Create the metaobject definition first, then the metafield that points at it.
 
-These steps use the Shopify admin. Nothing here is created by the theme or the CLI.
+These steps use the Shopify admin. Nothing here is created by the theme or the CLI. (The namespace is `nl_modules` rather than `nl` because Shopify requires at least 3 characters. Every nl- module shares it.)
 
 ## 1. Metaobject definition: `nl_spec`
 
@@ -21,11 +21,11 @@ These steps use the Shopify admin. Nothing here is created by the theme or the C
 6. Under **Access**, turn **Storefronts** on. Without this, Liquid can't read the entries.
 7. Leave **Publishable** and **Translations** off unless you need them. Click **Save**.
 
-## 2. Product metafield definition: `nl.specs`
+## 2. Product metafield definition: `nl_modules.specs`
 
 1. Go to **Settings › Custom data › Products**, then **Add definition**.
 2. **Name:** `Specifications`.
-3. **Namespace and key:** click the suggested key and replace it with **`nl.specs`**.
+3. **Namespace and key:** click the suggested key and replace it with **`nl_modules.specs`**.
 4. **Description** (optional): "Rows shown by the Specifications block."
 5. **Type:** **Metaobject**, then select **Spec**, then choose **List of entries**.
 6. Under **Access**, make sure **Storefronts** is on.
@@ -49,6 +49,6 @@ These steps use the Shopify admin. Nothing here is created by the theme or the C
 
 ## Behaviour
 
-- If `nl.specs` has entries, the block shows them and ignores its Spec row blocks.
-- If `nl.specs` is empty or missing, the block shows its Spec row blocks (set in the theme editor). This keeps products without the metafield from rendering an empty list.
+- If `nl_modules.specs` has entries, the block shows them and ignores its Spec row blocks.
+- If `nl_modules.specs` is empty or missing, the block shows its Spec row blocks (set in the theme editor). This keeps products without the metafield from rendering an empty list.
 - Line breaks in **Body** are kept. HTML is escaped.

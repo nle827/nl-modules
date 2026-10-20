@@ -8,8 +8,8 @@ Product specifications (Design, Material, Construction, Fit …) as label/body r
 
 ## What it does
 
-- Reads the product metafield **`nl.specs`**, a list of `nl_spec` metaobject entries, each with a label and a body. Content lives in the admin, not in code.
-- Falls back to **Spec row** child blocks set in the theme editor when a product has no `nl.specs` entries.
+- Reads the product metafield **`nl_modules.specs`**, a list of `nl_spec` metaobject entries, each with a label and a body. Content lives in the admin, not in code.
+- Falls back to **Spec row** child blocks set in the theme editor when a product has no `nl_modules.specs` entries.
 - **Display:** Open list, or Accordion. The accordion is a `<nl-spec-list>` custom element: a real `<button>` with `aria-expanded` and `aria-controls`, keyboard operable, with a visible focus ring.
 - **Show on:** all screens, desktop only (769px and up) or mobile only (up to 768px). Placing two copies, one per breakpoint, gives a desktop column plus a mobile accordion from the same data.
 - Opening one accordion closes the others by dispatching `nl:accordion-open` on `document`. Other nl- modules listen for it, and a host theme can join in too (see below).
@@ -53,7 +53,7 @@ Requires an Online Store 2.0 theme.
 | Show on | All / Desktop only / Mobile only | All | Breakpoint 768/769px |
 | Space between rows | Range 0–64px | 36px | |
 
-**Spec row** (child block): Label (text) and Text (textarea). Only rendered when the product has no `nl.specs` entries.
+**Spec row** (child block): Label (text) and Text (textarea). Only rendered when the product has no `nl_modules.specs` entries.
 
 ## Design tokens used
 
