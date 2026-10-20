@@ -59,6 +59,10 @@ Requires an Online Store 2.0 theme.
 
 `--nl-font-sans`, `--nl-font-serif`, `--nl-line-height`, `--nl-color-ink`, `--nl-color-text-mid`, `--nl-color-text-light`, `--nl-color-text-ghost`, `--nl-color-border`, `--nl-space-sm`, `--nl-ease`.
 
+## Tested in stock Dawn
+
+Installed into an unmodified Dawn 16.0.0 by following this README. It took about 2 minutes, worked at 320, 390 and 1440px, and had no JavaScript errors. See [the portability report](../case-study/PORTABILITY.md).
+
 ## Notes
 
 - The unit is remembered per browser under the key `nl-size-unit`. If storage is blocked, the toggle still works; the choice just isn't remembered.

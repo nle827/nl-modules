@@ -26,9 +26,16 @@ settings_schema.fragment.json     three settings groups: Colors, Typography, Lay
 | Group | Variables |
 |---|---|
 | Colour | `--nl-color-bg`, `-bg-alt`, `-white`, `-placeholder`, `-card`, `-text`, `-ink`, `-text-mid`, `-text-secondary`, `-text-light`, `-text-ghost`, `-on-dark`, `-rule`, `-border`, `-accent`, `-error` |
-| Type | `--nl-font-sans`, `--nl-font-serif`, `--nl-font-serif-weight`, `--nl-font-nav`, `--nl-font-nav-weight`, `--nl-line-height` |
+| Type | `--nl-font-sans`, `--nl-font-serif`, `--nl-font-serif-weight`, `--nl-font-nav`, `--nl-font-nav-weight`, `--nl-line-height`, `--nl-font-size-base` |
 | Layout | `--nl-page-width`, `--nl-text-width`, `--nl-space-xs`, `-sm`, `-md`, `-lg`, `-xl` |
 | Motion | `--nl-ease`, `--nl-ease-out` |
+
+## Text size
+
+Modules size their text from `--nl-rem`, which comes from `--nl-font-size-base`, rather than from `rem`. Some themes (Dawn among them) set the root font size to 62.5%, which would shrink `rem`-based text.
+
+- **nl-tokens** sets `--nl-font-size-base: 1rem`, which respects shoppers' browser text-size settings. In a theme whose root is 62.5%, change it to `1.6rem` in the snippet.
+- **Without nl-core**, modules use `16px`.
 
 ## Mapping to an existing theme instead
 
@@ -41,5 +48,6 @@ To make modules follow a theme's existing palette without adding settings, skip 
   --nl-color-border: rgba(var(--color-foreground), 0.15);
   --nl-font-sans: var(--font-body-family);
   --nl-font-serif: var(--font-heading-family);
+  --nl-font-size-base: 1.6rem; /* Dawn's root is 62.5% */
 }
 ```
