@@ -1,0 +1,40 @@
+{% comment %}
+  Wrapper section for themes whose product section can't hold theme blocks
+  (e.g. Dawn). Add it to the product template under the main product
+  section; it hosts one or more Collapsible row blocks.
+{% endcomment %}
+
+<div
+  class="nl-accordion-section"
+  style="--nl-section-pad-top: {{ section.settings.padding_top }}px; --nl-section-pad-bottom: {{ section.settings.padding_bottom }}px; --nl-section-width: {{ section.settings.max_width }}px;"
+>
+  {% content_for 'blocks' %}
+</div>
+
+{% stylesheet %}
+  .nl-accordion-section {
+    max-width: var(--nl-section-width);
+    margin: 0 auto;
+    padding: var(--nl-section-pad-top) 1.5rem var(--nl-section-pad-bottom);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Collapsible rows",
+  "blocks": [{ "type": "nl-accordion" }],
+  "max_blocks": 12,
+  
+  "settings": [
+    { "type": "range", "id": "max_width", "label": "Max width", "min": 400, "max": 1600, "step": 20, "unit": "px", "default": 1200 },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 36 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 36 }
+  ],
+  "presets": [
+    {
+      "name": "Collapsible rows",
+      "blocks": [{ "type": "nl-accordion" }]
+    }
+  ]
+}
+{% endschema %}
