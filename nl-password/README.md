@@ -41,8 +41,9 @@ templates/password.json      example template using this section
 | | Logo | (none: shows the store name) |
 | Tag | Tag text | `LINE 01` (empty hides the tag) |
 | | Show rules and dots around the tag | On |
-| Copy | Line 1 / 2 / 3 | Line 3: `First access, Nov 15.` |
-| | Sub-line | `The list receives the passcode two days before the public. 50 units. No restock.` (serif, muted, wraps) |
+| Copy | Headline | `Arriving soon.` |
+| | Line 2 / Line 3 | (optional, empty) |
+| | Sub-line | (optional, empty): serif, muted, wraps |
 | Signup | Show email signup | On |
 | | Email placeholder | `Email address` |
 | | Button label | `Request access` |
